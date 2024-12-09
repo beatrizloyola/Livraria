@@ -4,8 +4,8 @@ class AtendenteController{
 
     static async listar(req, res) {
         const s = req.query.s;
-        const livros = await LivroModel.find();
-        res.render("atendente/listar", { livros, s });
+        const atendentes = await AtendenteModel.find();
+        res.render("atendente/listar", { atendentes, s });
     };
 
     static async cadastrar(req, res) {
