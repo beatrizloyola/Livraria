@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <%- include("partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <div class="container livros">
+            <h2>Livros:</h2>
+            <div>
+                <a class="btn btn-primary" href="/livros/cadastrar">Cadastrar</a>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="/livros">Listar</a>
+            </div>
+        </div>
+        <div class="container atendentes">
+            <h2>Atendentes:</h2>
+            <div>
+                <a class="btn btn-primary" href="/atendentes/cadastrar">Cadastrar</a>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="/atendentes">Listar</a>
+            </div>
+        </div>
+        <div class="container usuarios">
+            <h2>Usuários:</h2>
+            <div>
+                <a class="btn btn-primary" href="/usuarios/cadastrar">Cadastrar</a>
+            </div>
+            <div>
+                <a class="btn btn-primary" href="/usuarios">Listar</a>
+            </div>
+        </div>
+        
+    </div>
+    <%- include("partials/rodape.ejs") %>
+</body>
+</html>

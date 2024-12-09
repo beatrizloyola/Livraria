@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <% if (s == 1) { %>
+            <div class="alert alert-success alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Já existe um usuário com este e-mail. Tente novamente.
+            </div>
+        <% } %>
+        <form action="/usuarios" method="post">
+            <div>
+                <label class="form-label">Nome:</label>
+                <input type="text" class="form-control" name="nome" required></div>
+            <div>
+                <label class="form-label">Email:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div>
+                <label class="form-label">Senha:</label>
+                <input type="password" class="form-control" name="senha" required>
+            </div>
+            <div>
+                <a href="/" class="btn btn-danger">Voltar</a>
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </div>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

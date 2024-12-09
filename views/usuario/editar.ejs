@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuário</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <form action="/usuarios/editar/<%= usuario._id %>" method="POST">
+            <div>
+                <label class="form-label">Nome:</label>
+                <input type="text" class="form-control" name="nome" value="<%= usuario.nome %>" required></div>
+            <div>
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" name="email" value="<%= usuario.email %>" required>
+            </div>
+            <div>
+                <label class="form-label">Senha:</label>
+                <input type="password" class="form-control" name="senha" required>
+            </div>
+            <div>
+                <a href="/" class="btn btn-danger">Voltar</a>
+                <input type="submit" class="btn btn-success" value="Salvar Alterações">
+            </div>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

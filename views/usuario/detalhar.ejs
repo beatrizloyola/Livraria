@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de <%= usuario.nome%></title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <div>
+            Nome: <%= usuario.nome %>
+        </div>
+        <div>
+            Email: <%= usuario.email %>
+        </div>
+        <div>
+            <a href="/usuarios">Voltar para listagem</a>
+        </div>
+    </div>
+    <%- include("../partials/rodape.ejs") %> 
+</body>  
+</html>

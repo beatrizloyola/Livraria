@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Livro</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <form action="/livros/editar/<%= livro.id %>" method="POST">
+            <div>
+                <label class="form-label">Título:</label>
+                <input type="text" class="form-control" name="titulo" value="<%= livro.titulo %>" required></div>
+            <div>
+                <label class="form-label">Autor:</label>
+                <input type="text" class="form-control" name="autor" value="<%= livro.autor %>" required>
+            </div>
+            <div>
+                <label class="form-label">Gênero:</label>
+                <input type="text" class="form-control" name="genero" value="<%= livro.genero %>" required>
+            </div>
+            <div>
+                <label class="form-label">Sinopse:</label>
+                <input type="text" class="form-control" name="sinopse" value="<%= livro.sinopse %>" required>
+            </div>
+            <div>
+                <a href="/" class="btn btn-danger">Voltar</a>
+                <input type="submit" class="btn btn-success" value="Salvar Alterações">
+            </div>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

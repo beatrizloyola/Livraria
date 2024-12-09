@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Atendente</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <form action="/atendentes/editar/<%= atendente.id %>" method="POST">
+            <div>
+                <label class="form-label">Nome:</label>
+                <input type="text" class="form-control" name="nome" value="<%= atendente.nome %>" required>
+            </div>
+            <div>
+                <label class="form-label">Função:</label>
+                <input type="text" class="form-control" name="funcao" value="<%= atendente.funcao %>" required>
+            </div>
+            <div>
+                <label class="form-label">Salário:</label>
+                <input type="number" class="form-control" name="salario" value="<%= atendente.salario %>" required>
+            </div>
+            <div>
+                <a href="/" class="btn btn-danger">Voltar</a>
+                <input type="submit" class="btn btn-success" value="Salvar Alterações">
+            </div>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

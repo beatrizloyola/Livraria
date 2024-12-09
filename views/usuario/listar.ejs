@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Usuários</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <% if (s == 1) { %>
+            <div class="alert alert-success alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Cadastrado com <b>sucesso!</b>
+            </div>
+        <% } else if (s == 2) { %>
+            <div class="alert alert-success alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Deletado com <b>sucesso!</b>
+            </div>
+        <% } else if (s ==3 ) {%>
+            <div class="alert alert-success alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Atualizado com <b>sucesso!</b>
+            </div>
+        <% } %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% usuarios.forEach(usuario => { %>
+                    <tr>
+                        <td><%= usuario.nome %></td>
+                        <td><%= usuario.email %></td>
+                        <td>
+                            <a class="btn btn-primary" href="usuarios/<%= usuario._id %>">Detalhar</a>
+                            <form action="/usuarios/deletar/<%= usuario._id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar este usuário?');">Deletar</button>
+                                 
+                            </form>
+                            <form action="/usuarios/editar/<%= usuario._id %>" method="GET" style="display:inline;">
+                                <button type="submit" class="btn btn-warning">Editar</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

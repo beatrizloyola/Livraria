@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de <%= livro.titulo%></title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <div>
+            Título: <%= livro.titulo %>
+        </div>
+        <div>
+            Autor: <%= livro.autor %>
+        </div>
+        <div>
+            Gênero: <%= livro.genero %>
+        </div>
+        <div>
+            Sinopse: <%= livro.sinopse %>
+        </div>
+        <div>
+            Id: <%= livro.id %>
+        </div>
+        <div>
+            <a href="/livros">Voltar para listagem</a>
+        </div>
+    </div>
+    <%- include("../partials/rodape.ejs") %> 
+</body>  
+</html>
